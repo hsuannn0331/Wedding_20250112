@@ -1,0 +1,195 @@
+/* 全域樣式 */
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+    height: 100vh;
+}
+
+/* 封面樣式 */
+.cover {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./img/wedding.png');
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    text-align: center;
+}
+
+/* 婚禮資訊隱藏及動畫樣式 */
+.info {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    display: none;
+    width: 80%;
+    max-width: 600px;
+    height: auto;
+    min-height: 250px;
+    font-size: 1.2em;
+}
+
+/* 顯示時 */
+.info.show {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    display: block;
+}
+
+/* 標題樣式 */
+.info-title {
+    font-size: 1.5em;
+    color: #ff6b6b;
+    margin-bottom: 20px;
+}
+
+/* 內容排版 */
+.info-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.info-right {
+    width: 45%;
+    text-align: left;
+    padding: 0 10px;
+    margin-left: 20px;
+}
+
+.info-left {
+    width: 45%;
+    text-align: left;
+    padding: 0 25px;
+}
+
+.separator {
+    width: 2px;
+    height: 80px;
+    background-color: #4f4d4d;
+}
+
+/* 內容底部資訊 */
+.info-bottom {
+    text-align: center;
+    white-space: nowrap;
+    margin-bottom: 40px;
+}
+
+/* 婚禮詳細資訊按鈕樣式 */
+.info-button {
+    position: fixed;
+    bottom: 120px;
+    padding: 10px 20px;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    font-size: 1.0em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+/* 按鈕 hover 效果 */
+.info-button:hover {
+    background-color: #ff4b4b;
+}
+
+/* 按鈕按下效果 */
+.info-button:active {
+    transform: scale(0.95);
+    background-color: #ff4b4b;
+}
+
+/* 關閉按鈕樣式 */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* SVG 叉叉樣式 */
+.close-button svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* 關閉按鈕 hover 效果 */
+.close-button:hover {
+    opacity: 0.7;
+}
+
+/* 關閉按鈕按下效果 */
+.close-button:active {
+    transform: scale(0.95);
+}
+
+/* h2 標題樣式 */
+h2 {
+    color: #ff6b6b;
+}
+
+/* h3 標題樣式 */
+h3 {
+    color: #333;
+    margin: 10px 0;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .cover {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .cover h1 {
+        font-size: 24px;
+    }
+    
+    .cover p {
+        font-size: 18px;
+    }
+
+    .info {
+        width: 70%;
+        max-width: 70%;
+    }
+
+    .info-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-left,
+    .info-right {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .separator {
+        display: none;
+    }
+}
